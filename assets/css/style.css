@@ -27,6 +27,15 @@ body {
     color: #2c3235;
 }
 
+h1{
+    font-family: Exo;
+    font-size: 65px;
+    font-weight: 400;
+    color: #0077f0;
+    padding: 10px;
+    text-align: center;
+}
+
 .jumbotron {
     background-image: url(../images/BG-Banner2.jpg);
     height: 30vh;

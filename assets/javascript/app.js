@@ -54,45 +54,35 @@ $(document).ready(function() {
        // var now = moment();
         var currentTime = moment();
 
-console.log("current time is: " + currentTime);
-
-console.log("start time is: " + train.TrainStart);
-
         //create relavent start time for the train
         var startThen = moment(train.TrainStart, "HH:mm").subtract(1, "years");
-console.log("startThen time is: " + startThen);
 
         //calculate time difference in mili second
         var timeDifferenceMilisec = currentTime - startThen;
         //calculate time difference in minutes
         var timeDifference = Math.round(timeDifferenceMilisec/60000);
 
-console.log("time Difference is: " + timeDifference);
-console.log("Frequency is: " + train.Interval);
         //minutes away
         var timeRemainder = timeDifference % train.Interval;
-console.log("timeRemainder is: " + timeRemainder);
-
         var minutesAway = train.Interval - timeRemainder;
-console.log("Minutes Away is: " + minutesAway);
 
+        //next train arriving
         var next = moment().add(minutesAway, "minutes");
-
         var nextArrival = moment(next).format("hh:mm")
 
 
-    //create table's <tobody>, adding class to <tobody>, constructing the table's <tr> and <td>
-    var tabod = $('<tbody>');
-    tabod.addClass('trainTable');
-    tabod.append($("<tr>").html("<td>" + train.TrainName + "</td><td>" + train.Destination + "</td><td>" + train.Interval + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>"));
+            //create table's <tobody>, adding class to <tobody>, constructing the table's <tr> and <td>
+            var tabod = $('<tbody>');
+            tabod.addClass('trainTable');
+            tabod.append($("<tr>").html("<td>" + train.TrainName + "</td><td>" + train.Destination + "</td><td>" + train.Interval + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>"));
 
-    //append the <tbody> to the table
-    $('.table').append(tabod);
+            //append the <tbody> to the table
+            $('.table').append(tabod);
 
-    // Handle the errors
- }, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
+            // Handle the errors
+        }, function(errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
 
 
 
