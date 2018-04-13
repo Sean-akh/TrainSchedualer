@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Central Station Train Schedule</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font import for Open Sans and Exo2-->
+    <link href="https://fonts.googleapis.com/css?family=Exo:300,400,500,700|Open+Sans+Condensed:300|Open+Sans:200,300,400|PT+Sans|Raleway" rel="stylesheet">
+
+    <!-- Jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- connect to Bootstrap CDN  and style sheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- My Style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fire base -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+                <div id="jumboInside"><h1>Central Station Train Schedule</h1></div>
+                <div id="timeBox">clock goes here</div>
+        </div>
+        <div id="train-schedule" class="col-md-12">
+            <table class="table">
+                <thead id="schedule-head">
+                        <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                        </tr>
+                </thead>
+                <tbody id="schedule-body">
+                                
+                </tbody>
+            </table>
+
+        </div>
+        <div id="schedule-input" class="col-md-12">
+            <form id="schedule-form">
+                <div class="form-row form-group">
+                    <div class="col form-group" id="f1">
+                        <label for="trainNameInput">Train Name</label>
+                        <input type="name" class="form-control" id="trainNameInput" placeholder="name">
+                    </div>
+                    <div class="col form-group" id="f2">
+                            <label for="destinationInput">Destination</label>
+                            <input type="name" class="form-control" id="destinationInput" placeholder="Destination">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col form-group" id="f3">
+                            <label for="firstTrainTimeInput">First Train Time</label>
+                            <input type="text" class="form-control" id="firstTrainTimeInput" placeholder="HH:mm">
+                    </div>
+                    <div class="col form-group" id="f4">
+                            <label for="frequencyInput">Frequency (min)</label>
+                            <input type="number" class="form-control" id="frequencyInput" placeholder="interval arrival time in Min.">
+                    </div>
+                </div>
+                <div id="submitButtonBox" class="col-md-2">
+                    <button type="submit" id="sbmitbutt" class="subButn">Submit</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Local app.js file -->
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
